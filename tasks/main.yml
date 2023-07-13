@@ -1,0 +1,25 @@
+---
+# tasks file for mysql_db
+- name: Install MySQL database
+  apt: 
+    name:
+      - mariadb-server
+      # - mysql-client
+    state: present
+
+- name: Start mysql service
+  service:
+    name: mysql
+    state: started
+    enabled: yes
+
+- name: Create app database
+  mysql_db: name={{ db_name }} state=present
+
+- name: Create db user
+  mysql_user: 
+    name: '{{ db_user }}'
+    password: '{{ db_passwd }}'
+    priv: '*.*:ALL'
+    state: present
+    host: '%'
