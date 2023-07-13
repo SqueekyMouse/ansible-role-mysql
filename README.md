@@ -24,6 +24,10 @@ Example Playbook
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
     - hosts: servers
+      vars:
+        db_name: testdb
+        db_user: testdbuser
+        db_passwd: testdbpasswd
       roles:
          - mysql_db
 
