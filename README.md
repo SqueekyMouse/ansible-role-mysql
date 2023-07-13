@@ -6,7 +6,7 @@ This role installs mariadb and sets up mysql database.
 Requirements
 ------------
 
-Just make sure apt/yum updated
+Just make sure apt updated
 
 Role Variables
 --------------
